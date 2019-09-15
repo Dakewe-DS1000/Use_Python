@@ -50,7 +50,7 @@
 >var1 = 0b10 # output : 2\
 >var2 = 0o10 # output : 8\
 >var3 = 0x10 # output : 16\
->print(var1, var2, var3)\
+>print(var1, var2, var3)
 #### Python支持非常长的整数
 >var1 = 1234567890123456789012345678901234567890\
 >print(var1, type(var1)) # 并不损失任何精确度
@@ -87,7 +87,7 @@
 >这里被注释，不输出\
 >print("这句可以被输出")\
 >也可以这样写多行注释\
->'''\
+>'''
 
 ### <6> Python中的基本运算
 #### 算术运算
@@ -101,11 +101,11 @@
 >e = c // a\
 >f = c % a\
 >g = c ** a\
->print(c, d, e, f, g)\
+>print(c, d, e, f, g)
 ##### 结果符号和除数相同
 >c = -10 % 3 # output +\
 >d = 10 % -3  # output -\
->print(c, d)\
+>print(c, d)
 #### 幂运算
 >c = 10 ** 3\
 >print(c)\
@@ -124,10 +124,10 @@
 >print(3.0==3)   #output : True\
 >print(3=="3")   #output : False
 #### 在Python中算术运算的优先级比关系运算的优先级要高
->print(10+3==13) \
+>print(10+3==13)
 
-output : True，这里先做+的算术运算，再去做比较运算\
->print(13==10+3) \
+output : True，这里先做+的算术运算，再去做比较运算
+>print(13==10+3)
 
 output : True
 
@@ -140,7 +140,7 @@ a += 3\
 b *= 2\
 print(a, b)\
 a //= b\
-print(a, b)\
+print(a, b)
 
 ### <9> Python中的逻辑运算
 #### and(与), or(或), not(非)
@@ -152,6 +152,6 @@ e = not a   # output : False\
 print(c, d, e)\
 c = -1\
 d = a and c\
-print(d)    # output : -1\
+print(d)    # output : -1
 #### 非零的值视为True
 >print(0 == False) # output : True
