@@ -137,3 +137,17 @@ b *= 2
 print(a, b)
 a //= b
 print(a, b)
+
+#Python中的逻辑运算
+#and(与), or(或), not(非)
+#非零的值视为True
+a = True
+b = False
+c = a and b # output : False
+d = a or b  # output : True
+e = not a   # output : False
+print(c, d, e)
+c = -1
+d = a and c
+print(d)    # output : -1
+print(0 == False) # output : True
