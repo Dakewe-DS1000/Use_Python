@@ -69,7 +69,8 @@ print(eval(calc))
 ##条件语句
 ###if 条件表达式: 语句块
 print("请输入体重(kg) : ")
-weight = float(input())
+#weight = float(input())
+weight = 90
 if weight>90:
     print("胖子，你该减肥了")
 ###if 条件表达式:
@@ -77,7 +78,8 @@ if weight>90:
 ###else:
 ###     语句块2
 print("请输入体重(kg) : ")
-weight = float(input())
+#weight = float(input())
+weight = 90
 if weight > 90:
     print("胖子，你该减肥了")
 else:
@@ -89,12 +91,14 @@ else:
 ###else:
 ###     语句块3
 print("请输入体重(kg) : ")
-weight = float(input())
+#weight = float(input())
+weight = 90
 print("请输入身高(m) : ")
-height = float(input())
+#height = float(input())
+height = 1.8
 BMI = weight / height **2
 if BMI < 20:
-    print("你的BMI指数是%.2,太轻了哦" %BMI)
+    print("你的BMI指数是%.2, 太轻了哦" %BMI)
 elif BMI > 25:
     print("你的BMI指数是%.2f, 太重了哦" %BMI)
 else:
@@ -114,3 +118,98 @@ while num > 0:
         count = count + 1
     num //= 10
 print(count)
+
+###For循环
+###for 循环变量 in 序列:
+###     语句块
+####统计6出现在2的100次方中出现的次数
+num = 2 ** 100
+print(num)
+count = 0
+for digit in str(num):
+    if digit == "6":
+        count += 1
+print(count)
+
+####输出从1到10的整数
+for i in range(1, 10):
+    print(i)
+####输出从0到10的整数
+for i in range(10):
+    print(i)
+####以2为步进，输出从0到10的整数
+for i in range(0, 10, 2):
+    print(i)
+
+###列表推导式
+list1 = [1, 2, 3]
+list2 = [3, 4, 5]
+print([x * y for x in list1 for y in list2])
+for x in list1:
+    for y in list2:
+        print(x * y)
+print([x for x in list1 if 4>x>1])
+
+##循环嵌套
+for i in range(1, 10):
+    for j in range(1, i+1):
+        result = j * i
+        print("%s x %s = %-5s" % (i, j, result), end=" ")
+    print()
+
+##break语句
+###如果在嵌套循环中，break语句将停止执行本层的循环
+####字符9出现在num数据列中的位置
+num = 2 ** 100
+pos = 0
+for digit in str(num):
+    pos += 1
+    if digit == "9":
+        break
+print("2**100 is %d \nthe first position of 9 is Pos. %d" % (num, pos))
+
+##continue语句
+###跳过当前循环的剩余语句，然后继续进行下一轮循环
+num = 2 ** 100
+without9 = ""
+for digit in str(num):
+    if digit == "9":
+        continue
+    without9 += digit
+print("2**100 is : %d \nwtihout 9 is : %s" % (num, int(without9)))
+
+##pass语句
+###空语句，是为了保持程序结构的完整性，一般用作占位语句
+num = 2 ** 100
+without9 = ""
+for digit in str(num):
+    if digit == "9":
+        pass
+    else:
+        without9 += digit
+print("2**100 is : %d \nwtihout 9 is : %s" % (num, int(without9)))
+
+##函数
+####def function_name(parameters):
+####    function_suite
+####    return [expression]
+def fact(n):
+    result = 1
+    for i in range(1, n+1):
+        result = result * i
+    return result
+pass
+res = fact(10)
+print(res)
+
+def fun_example(listp, intp = 0, stringp = "A Default String"):
+    listp.append("A new item")
+    intp += 1
+    return listp, intp, stringp
+pass
+fun_example.__doc__
+my_list = [1, 2, 3]
+a, b, c = fun_example(my_list)
+print(a, b, c)
+
+##全局变量和局部变量
